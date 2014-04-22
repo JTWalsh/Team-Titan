@@ -6,3 +6,13 @@ RegisterForm.EasyBox {
     image_down_hovered: "images/EasyBoxChecked.png"
     image_down_focuses: "images/EasyBoxChecked.png"
 }
+
+RegisterForm.OptionButton {
+    image_up: "images/Car.png"
+    image_up_hovered: "images/Car.png"
+    image_up_focuses: "images/Car.png"
+    image_down: "images/Car.png"
+    image_down_hovered: "images/Car.png"
+    image_down_focuses: "images/Car.png"
+    nine_slice: False
+}

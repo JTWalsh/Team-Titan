@@ -17,13 +17,15 @@ class MainMenu(spyral.Scene):
     def __init__(self):
         super(MainMenu, self).__init__(SIZE)
 
+        self.load_style("game/style.spys")
+
         spyral.event.register('input.keyboard.down.esc', spyral.director.quit)
         spyral.event.register("system.quit", spyral.director.quit)
 
         self.background = spyral.Image("images/Background.png")
         self.image = spyral.Image("images/Garage.png")
-        playerVehicle = Vehicle.Vehicles(self)
-        playerVehicle.pos = (WIDTH/2, (HEIGHT/2)+200)
+#        playerVehicle = Vehicle.Vehicles(self)
+#        playerVehicle.pos = (WIDTH/2, (HEIGHT/2)+200)
         CarGarage = Garage.Garage(self)
         CarGarage.pos = ((WIDTH/2), (HEIGHT/2)-200)
 
@@ -31,11 +33,11 @@ class MainMenu(spyral.Scene):
             StartGame = spyral.widgets.Button("Start Game")
             OptionButton = spyral.widgets.Button("Options")
         
-        self.my_form = RegisterForm(self)
+        my_form = RegisterForm(self)
 
-        self.my_form.focus()
-        self.my_form.StartGame.pos = ((WIDTH/2)-50, (HEIGHT/2) + 200)
-        self.my_form.OptionButton.pos = ((WIDTH/2)-50, (HEIGHT/2) + 300)
+        my_form.focus()
+        my_form.StartGame.pos = ((WIDTH/2)-50, (HEIGHT/2) + 200)
+        my_form.OptionButton.pos = ((WIDTH/2)-50, (HEIGHT/2) + 300)
 
         spyral.event.register("form.RegisterForm.OptionButton.clicked", self.goToOptions)
         spyral.event.register("form.RegisterForm.StartGame.clicked", self.goToRace)
