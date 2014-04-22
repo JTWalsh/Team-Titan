@@ -1,0 +1,17 @@
+import spyral
+        class RegisterForm(spyral.Form):
+            BackButton = spyral.widgets.Button("Go Back")
+            EasyBox = spyral.widgets.Checkbox()
+
+        my_form = RegisterForm(self)
+
+        my_form.focus()
+        my_form.EasyBox {
+            image_up: "images/EasyBox.png"
+            image_up_hovered: "images/EasyBox.png"
+            image_up_focuses: "images/EasyBox.png"
+            image_down: "images/EasyBox.png"
+            image_down_hovered: "images/EasyBox.png"
+            image_down_focuses: "images/EasyBox.png"
+        }
+        my_form.BackButton.pos = ((WIDTH/2)-50, (HEIGHT/2) + 300)
