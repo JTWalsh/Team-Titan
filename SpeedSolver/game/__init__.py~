@@ -6,4 +6,4 @@ import TitleScreen
 import Race
 
 def main():
-    spyral.director.push(MainScreen.MainMenu())
+    spyral.director.push(Options.OptionScene())
