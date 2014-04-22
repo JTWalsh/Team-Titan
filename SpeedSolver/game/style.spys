@@ -2,7 +2,7 @@ RegisterForm.EasyBox {
     image_up: "images/EasyBox.png"
     image_up_hovered: "images/EasyBox.png"
     image_up_focuses: "images/EasyBox.png"
-    image_down: "images/MediumBox.png"
-    image_down_hovered: "images/MediumBox.png"
-    image_down_focuses: "images/MediumBox.png"
+    image_down: "images/EasyBoxChecked.png"
+    image_down_hovered: "images/EasyBoxChecked.png"
+    image_down_focuses: "images/EasyBoxChecked.png"
 }
