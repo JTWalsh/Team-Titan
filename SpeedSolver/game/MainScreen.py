@@ -35,6 +35,7 @@ class MainMenu(spyral.Scene):
         class RegisterForm(spyral.Form):
             StartGame = spyral.widgets.Button("Start Game")
             OptionButton = spyral.widgets.Button("Options")
+
         
         my_form = RegisterForm(self)
         my_form.focus()
