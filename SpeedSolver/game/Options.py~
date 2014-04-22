@@ -72,20 +72,24 @@ class OptionScene(spyral.Scene):
     def __init__(self):
         super(OptionScene, self).__init__(SIZE)
 
+        self.load_style("game/style.spys")
+
         spyral.event.register('input.keyboard.down.esc', spyral.director.quit)
         spyral.event.register("system.quit", spyral.director.quit)
 
         self.background = spyral.Image("images/Option_Menu.png")
 
-        mediumCheck = CheckMark(self.scene, (75, 450))
-        easy = EasyBox(self)
-        medium = MediumBox(self)
-        hard = HardBox(self)
-        addition = AdditionBox(self)
-        subtraction = SubtractionBox(self)
-        multiplication = MultiplicationBox(self)
-        division = DivisionBox(self)
+##        mediumCheck = CheckMark(self.scene, (75, 450))
+#        easy = EasyBox(self)
+#        medium = MediumBox(self)
+#        hard = HardBox(self)
+#        addition = AdditionBox(self)
+#        subtraction = SubtractionBox(self)
+#        multiplication = MultiplicationBox(self)
+#        division = DivisionBox(self)
         self.background = spyral.Image("images/Option_Menu.png")
+
+
 
         class RegisterForm(spyral.Form):
             BackButton = spyral.widgets.Button("Go Back")
@@ -94,43 +98,37 @@ class OptionScene(spyral.Scene):
         my_form = RegisterForm(self)
 
         my_form.focus()
-       # my_form.EasyBox {
-       #     image_up: "images/EasyBox.png"
-       #     image_up_hovered: "images/EasyBox.png"
-       #     image_up_focuses: "images/EasyBox.png"
-       #     image_down: "images/EasyBox.png"
-       #     image_down_hovered: "images/EasyBox.png"
-       #     image_down_focuses: "images/EasyBox.png"
-       # }
+
+
         my_form.BackButton.pos = ((WIDTH/2)-50, (HEIGHT/2) + 300)
 
         spyral.event.register("form.RegisterForm.BackButton.clicked", self.goToMenu)
-        spyral.event.register("input.mouse.down", self.makeMark)
+#        spyral.event.register("input.mouse.down", self.makeMark)
 	
     def goToMenu(self):
         spyral.director.pop
         spyral.director.push(MainScreen.MainMenu()) 
 
-    def makeMark(self, pos):
-        pos = spyral.Vec2D(pos)
-        easyCheck = CheckMark(self.scene, (75, 310))
-        easyCheck.visible = False
-        if pos.x > 35 and pos.x < 120 and pos.y > 230 and pos.y < 310:
-            if easyCheck.visible == False:
-                easyCheck.visible = True
-            elif easyCheck.visible == True:
-                easyCheck.visible = False;
-        if pos.x > 35 and pos.x < 120 and pos.y > 330 and pos.y < 410:
-            CheckMark(self.scene, (75, 450))
-        if pos.x > 35 and pos.x < 120 and pos.y > 465 and pos.y < 545:
-            CheckMark(self.scene, (75, 650))        
-        if pos.x > 410 and pos.x < 495 and pos.y > 130 and pos.y < 210:
-            CheckMark(self.scene, (575, 150))
-        if pos.x > 410 and pos.x < 495 and pos.y > 230 and pos.y < 310:
-            CheckMark(self.scene, (575, 310))
-        if pos.x > 410 and pos.x < 495 and pos.y > 330 and pos.y < 410:
-            CheckMark(self.scene, (575, 450))
-        if pos.x > 410 and pos.x < 495 and pos.y > 465 and pos.y < 545:
-            CheckMark(self.scene, (575, 650))
+#    def makeMark(self, pos):
+#        pos = spyral.Vec2D(pos)
+#        easyCheck = CheckMark(self.scene, (75, 310))
+#        easyCheck.visible = False
+#        if pos.x > 35 and pos.x < 120 and pos.y > 230 and pos.y < 310:
+#            if easyCheck.visible == False:
+#                easyCheck.visible = True
+#            elif easyCheck.visible == True:
+#                easyCheck.visible = False;
+#        if pos.x > 35 and pos.x < 120 and pos.y > 330 and pos.y < 410:
+#            CheckMark(self.scene, (75, 450))
+#        if pos.x > 35 and pos.x < 120 and pos.y > 465 and pos.y < 545:
+#            CheckMark(self.scene, (75, 650))        
+#        if pos.x > 410 and pos.x < 495 and pos.y > 130 and pos.y < 210:
+#            CheckMark(self.scene, (575, 150))
+#        if pos.x > 410 and pos.x < 495 and pos.y > 230 and pos.y < 310:
+#            CheckMark(self.scene, (575, 310))
+#        if pos.x > 410 and pos.x < 495 and pos.y > 330 and pos.y < 410:
+#            CheckMark(self.scene, (575, 450))
+#        if pos.x > 410 and pos.x < 495 and pos.y > 465 and pos.y < 545:
+#            CheckMark(self.scene, (575, 650))
 
 
